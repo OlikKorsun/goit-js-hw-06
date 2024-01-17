@@ -10,12 +10,15 @@ class Storage {
     }
 
     addItem(newItem) {
-        return this.#items.push(newItem);
+        this.#items.push(newItem);
     }
 
     removeItem(itemToRemove) {
-        this.#items.splice((this.#items.indexOf(itemToRemove)),1);
-        return this.#items;
+        if (this.#items.includes(itemToRemove)) {
+            this.#items.splice((this.#items.indexOf(itemToRemove)), 1);
+        } else {
+            console.log("Неможливо видалити товар, він відсутній на складі");
+            }
     }
 
 }
