@@ -16,8 +16,6 @@ class Storage {
     removeItem(itemToRemove) {
         if (this.#items.includes(itemToRemove)) {
             this.#items = this.#items.filter(item => item !== itemToRemove);
-            } else {
-            console.log("Неможливо видалити товар, він відсутній на складі");
             }
     }
 
